@@ -1,0 +1,618 @@
+/* =========================================================
+   GLOBAL / BASE STYLES
+========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #332C27;
+  background-color: #FDFBF7;
+}
+
+h1, h2, h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+  color: #2A2421;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION BAR
+========================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2A2421;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar .logo {
+  margin: 0;
+}
+
+.navbar .logo a {
+  color: #F4E8C1;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.navbar .logo a span {
+  color: #D9531E;
+}
+
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar nav li {
+  margin-left: 1.5rem;
+}
+
+.navbar nav a {
+  color: #F4E8C1;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #D9531E;
+}
+
+.navbar nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #D9531E;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO / HOME SECTION
+========================================================== */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  background: url('images/hero-bg.jpeg') center/cover no-repeat #2A2421;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 22, 18, 0.65);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.hero-section .tagline {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.95rem;
+  color: #F4E8C1;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  line-height: 1.15;
+}
+
+.hero-section .welcome-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #EFE8DF;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #D9531E;
+  color: #FFFFFF;
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #B53F12;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   ABOUT US SECTION
+========================================================== */
+.about-section {
+  padding: 4.5rem 0;
+  background-color: #F5EFEB;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: #2A2421;
+  text-align: center;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-section h3 {
+  margin-bottom: 1.2rem;
+  color: #D9531E;
+  font-size: 1.35rem;
+}
+
+.perks-list {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+.perks-list li {
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   NEW ARRIVALS & STAFF PICKS SECTION
+========================================================== */
+.arrivals-section {
+  padding: 4.5rem 0;
+}
+
+.arrivals-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #665E58;
+  font-size: 1.05rem;
+}
+
+.album-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.album-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5DED6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.album-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.album-cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+}
+
+.album-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.album-card .artist {
+  font-weight: bold;
+  color: #665E58;
+  margin-bottom: 0.25rem;
+}
+
+.album-card .genre {
+  display: block;
+  font-size: 0.85rem;
+  color: #887F77;
+  margin-bottom: 0.75rem;
+}
+
+.album-card .price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2A2421;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #2A2421;
+  color: #F4E8C1;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #D9531E;
+  color: #FFFFFF;
+}
+
+/* Staff Weekly Picks Styling */
+.staff-picks-container {
+  background-color: #F5EFEB;
+  border-left: 4px solid #D9531E;
+  padding: 2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.staff-picks-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: #D9531E;
+}
+
+.picks-intro {
+  font-size: 0.95rem;
+  color: #665E58;
+  margin-bottom: 1.25rem;
+}
+
+.staff-picks-list {
+  list-style: none;
+}
+
+.pick-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed #DCD3CA;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pick-item:last-child {
+  border-bottom: none;
+}
+
+.staff-name {
+  font-weight: bold;
+  color: #2A2421;
+}
+
+.album-title {
+  color: #D9531E;
+}
+
+.pick-note {
+  font-size: 0.95rem;
+  color: #554E48;
+}
+
+/* =========================================================
+   CUSTOMER REVIEWS SECTION
+========================================================== */
+.reviews-section {
+  padding: 4.5rem 0;
+  background-color: #EFE8DF;
+}
+
+.reviews-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.reviews-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 1.75rem;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.star-rating {
+  color: #E67E22; /* Warm amber/gold for stars */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.review-quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #332C27;
+  margin-bottom: 1.25rem;
+}
+
+.reviewer {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #2A2421;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.reviewer-role {
+  font-weight: normal;
+  color: #665E58;
+}
+
+/* =========================================================
+   VISIT US / CONTACT SECTION
+========================================================== */
+.visit-section {
+  padding: 4.5rem 0;
+  background-color: #F5EFEB;
+}
+
+.visit-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Two-column layout on desktop */
+.visit-grid {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-info, .hours-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h3, .hours-info h3 {
+  margin-bottom: 1rem;
+  color: #D9531E;
+  font-size: 1.35rem;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 1.25rem;
+}
+
+address a, .social-links a {
+  color: #D9531E;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+address a:hover, .social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Get Directions Button */
+.btn-directions {
+  display: inline-block;
+  background-color: #2A2421;
+  color: #F4E8C1;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-directions:hover {
+  background-color: #D9531E;
+  color: #FFFFFF;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hours-table th, .hours-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E5DED6;
+}
+
+.hours-table th {
+  background-color: #2A2421;
+  color: #F4E8C1;
+}
+
+/* =========================================================
+   FOOTER SECTION & BACK-TO-TOP BUTTON
+========================================================== */
+.site-footer {
+  background-color: #2A2421;
+  color: #F4E8C1;
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.footer-tagline {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #F4E8C1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #D9531E;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #A39B94;
+  margin-bottom: 0;
+}
+
+/* Circular Back to Top Floating Button */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #D9531E;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #2A2421;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .navbar nav li {
+    margin: 0 0.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-section .welcome-text {
+    font-size: 1rem;
+  }
+
+  .visit-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pick-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
